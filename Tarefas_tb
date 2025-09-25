@@ -1,0 +1,18 @@
+from itertools import count
+
+id_tarefa = count(1)
+tarefas = []
+
+id_projeto = int(input("ID projeto: "))
+descricao = input("Descrição da tarefa: ")
+responsavel = int(input("ID responsável: "))
+status = input("Status: ")
+
+tarefas.append({
+    "id": next(id_tarefa),
+    "id_projeto": id_projeto,
+    "descricao": descricao,
+    "responsavel": responsavel,
+    "status": status
+})
+print(tarefas)
