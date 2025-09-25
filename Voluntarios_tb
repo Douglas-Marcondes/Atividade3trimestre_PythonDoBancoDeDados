@@ -1,0 +1,16 @@
+from itertools import count
+
+id_vol = count(1)
+voluntarios = []
+
+id_usuario = int(input("ID usuário: "))
+area = input("Área de atuação: ")
+disp = input("Disponibilidade: ")
+
+voluntarios.append({
+    "id": next(id_vol),
+    "id_usuario": id_usuario,
+    "area": area,
+    "disponibilidade": disp
+})
+print(voluntarios)
