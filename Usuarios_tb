@@ -1,0 +1,30 @@
+import hashlib
+from itertools import count
+
+def criptografar(senha):
+    return hashlib.sha256(senha.encode()).hexdigest()
+
+def limpar(texto):
+    return ''.join(filter(str.isdigit, texto))
+
+id_usuario = count(1)
+usuarios = []
+
+nome = input("Nome: ")
+email = input("Email: ")
+senha = criptografar(input("Senha: "))
+cpf = limpar(input("CPF (000.000.000-00): "))
+telefone = limpar(input("Telefone ((00) 00000-0000): "))
+
+if len(cpf) == 11:
+    usuarios.append({
+        "id": next(id_usuario),
+        "nome": nome,
+        "email": email,
+        "senha": senha,
+        "cpf": cpf,
+        "telefone": telefone
+    })
+    print(usuarios)
+else:
+    print("CPF inválido!")
