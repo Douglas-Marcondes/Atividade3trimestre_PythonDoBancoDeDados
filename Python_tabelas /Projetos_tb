@@ -1,0 +1,20 @@
+from itertools import count
+
+id_projeto = count(1)
+projetos = []
+
+nome = input("Nome do projeto: ")
+descricao = input("Descrição: ")
+inicio = input("Data de início (AAAA-MM-DD): ")
+fim = input("Data de fim (AAAA-MM-DD): ")
+status = input("Status: ")
+
+projetos.append({
+    "id": next(id_projeto),
+    "nome": nome,
+    "descricao": descricao,
+    "inicio": inicio,
+    "fim": fim,
+    "status": status
+})
+print(projetos)
